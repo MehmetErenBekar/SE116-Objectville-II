@@ -6,7 +6,6 @@ import java.util.List;
 
 public class GameRunner {
 
-
     public static char[][] readFile(String fileName) {
 
         List<String> lines = new ArrayList<>();
