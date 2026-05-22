@@ -1,4 +1,6 @@
 public class GameOfLife {
+    // checks if the parcel is alive or not
+    // true means it is alive false means it is dead
     public boolean apply(boolean currentStatus, int neighborCount){
         if(currentStatus){
             if(neighborCount == 2 || neighborCount == 3){
