@@ -25,7 +25,7 @@ public abstract class Cell {
     public void setCol(int col) {
         this.col = col;
     }
-    public abstract String display();
+    public abstract char display();
 
     }
 

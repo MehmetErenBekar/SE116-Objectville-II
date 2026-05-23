@@ -89,7 +89,7 @@ public abstract class Zone extends Cell {
 
     public abstract int calculateProduction();
 
-    public abstract void udpateLevel();
+    public abstract void updateLevel();
 
     public void reset() {
         receivedElectricity = 0;
