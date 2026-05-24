@@ -1,6 +1,10 @@
 package com.objectville.model;
 
-public abstract class Zone extends Cell {
+import com.objectville.interfaces.Serviceable;
+import com.objectville.interfaces.Upgradable;
+import com.objectville.interfaces.UtilityConsumer;
+
+public abstract class Zone extends Cell implements Serviceable, Upgradable, UtilityConsumer {
     protected int level = 0;
     protected int demand = 1;
     protected int output = 0;

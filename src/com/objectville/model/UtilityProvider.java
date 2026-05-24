@@ -1,6 +1,8 @@
 package com.objectville.model;
 
-public abstract class UtilityProvider extends Cell {
+import com.objectville.interfaces.UtilityProducer;
+
+public abstract class UtilityProvider extends Cell implements UtilityProducer {
     protected String type; //electricity , water or internet
     protected int capacity=100; // each provider generates 100 units per tick
 
