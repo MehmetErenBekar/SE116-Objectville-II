@@ -64,7 +64,7 @@ import java.util.*;
                 if (remainingCapacity >= demand) {
                     remainingCapacity -= demand;
                 } else {
-                    remainingCapacity = 0; // Kapasite bitti
+                    remainingCapacity = 0;
                     break;
                 }
             }
@@ -120,7 +120,7 @@ import java.util.*;
 }
     class pair{
     int first; // x value
-    int second;
+    int second; // y value
     public pair(int first, int second)
     {
         this.first = first;
