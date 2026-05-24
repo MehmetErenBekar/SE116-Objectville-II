@@ -1,7 +1,14 @@
 package com.objectville.model;
 
 public class PoliceStation extends ServiceProvider{
-    public PoliceStation(){
-        this.type=S
+    public PoliceStation(int row,int col){
+       super(row, col);
+       this.type="SECURİTY";
+       this.radius=5;
     }
+    @Override
+    public char display(){
+        return 'F'; //F means force
+    }
+
 }
