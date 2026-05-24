@@ -70,8 +70,7 @@ import java.util.*;
             }
 
             // Go to the adjacent cells
-            for(int i = 0; i < 4; i++)
-            {
+            for(int i = 0; i < 4; i++) {
                 int adjx = x + dRow[i];
                 int adjy = y + dCol[i];
 

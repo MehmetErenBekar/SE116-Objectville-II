@@ -28,7 +28,6 @@ public class GameRunner {
 
         int rowCount = lines.size();  // in the arraylist we put every line in the list therefore size is the the number of rows
         int colCount = lines.get(0).length(); //length of the first line will give us the column number
-
         char[][] result = new char[rowCount][colCount];
 
         for (int i = 0; i < rowCount; i++) {
