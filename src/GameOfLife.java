@@ -26,6 +26,7 @@ public class GameOfLife {
 
         //WRITE AN IF STATEMENT CHECKING THE BOUNDERIES
 
+
         for (int i = 0; i < 8; i++) {
             int adjx = x + dRow[i];
             int adjy = y + dCol[i];
