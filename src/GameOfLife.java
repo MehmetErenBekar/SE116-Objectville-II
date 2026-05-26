@@ -54,6 +54,8 @@ public class GameOfLife {
     }
 
     //returns the next grid
+    //scans through all cell and gets their status
+    //using the apply method gets the next status
     public Cell[][] nextTick(Cell[][] original_grid) {
         int rows = original_grid.length;
         int cols = original_grid[0].length;
