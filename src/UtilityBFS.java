@@ -1,30 +1,25 @@
 
 import com.objectville.model.*;
-
-import java.nio.channels.Pipe;
 import java.util.*;
 
 
 
     public  class UtilityBFS
     {
-
-
-
-    static final int ROW = 20;
-    static final int COL = 20;
-
     // Direction vectors
     static int dRow[] = { -1, 0, 1, 0 };
     static int dCol[] = { 0, 1, 0, -1 };
 
     // Function to check if a cell
 // is be visited or not
-    static boolean isValid(boolean vis[][], int row, int col) {
+    static boolean isValid(Cell[][] grid, boolean vis[][], int row, int col) {
+
+        int maxRow = grid.length;
+        int maxCol = grid[0].length;
 
         // If cell lies out of bounds
         if (row < 0 || col < 0 ||
-                row >= ROW || col >= COL)
+                row >= maxRow || col >= maxCol)
             return false;
 
         // If cell is already visited
@@ -64,7 +59,7 @@ import java.util.*;
             q.remove();
 
             if (isBuildingWithDemand(grid[x][y])) {
-                int demand = getBuildingDemand(x, y);
+                int demand = getBuildingDemand(grid[x][y]);
                 if (remainingCapacity >= demand) {
                     remainingCapacity -= demand;
                 } else {
@@ -78,7 +73,7 @@ import java.util.*;
                 int adjx = x + dRow[i];
                 int adjy = y + dCol[i];
 
-                if (isValid(vis, adjx, adjy) &&  isWalkable(grid[adjx][adjx]))
+                if (isValid(grid,vis, adjx, adjy) &&  isWalkable(grid[adjx][adjy]))
                 {
                     int distance = MathUtils.calculateManhattanDistance(startX, startY, adjx, adjy);
 
@@ -110,9 +105,16 @@ import java.util.*;
             }
             return true;
         }
-        static int getBuildingDemand(int x, int y) {
-        return 0;
+        static int getBuildingDemand(Cell c) {
+            if (c instanceof Zone) {
+                Zone building = (Zone) c;
+
+                return building.getDemand();
+            }
+
+            return 0;
         }
+
 
     // Driver Code
     public static void main(String[] args)
@@ -120,13 +122,16 @@ import java.util.*;
 
         // Given input matrix
         Cell grid[][] = MapReader.readFile("map.txt");
+        int rows = grid.length;
+        int cols = grid[0].length;
+
         int startX = 10;
         int startY = 10;
         int maxRadius = 5;
         int initialCapacity = 100;
 
         // Declare the visited array
-        boolean [][]vis = new boolean[ROW][COL];
+        boolean [][]vis = new boolean[rows][cols];
 
         BFS( grid, vis, startX, startY, maxRadius, initialCapacity);
     }
