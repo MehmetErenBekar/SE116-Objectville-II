@@ -1,4 +1,4 @@
 package com.objectville.model;
 
-public class PoliceStation extends ServiceProvider{
+public class PoliceStation extends ServiceProvider {
 }
