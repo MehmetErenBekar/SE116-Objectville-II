@@ -47,41 +47,40 @@ public class MapReader {
                 char c = lines.get(i).charAt(j);
                 switch (c) {
                     case 'H':
-                        mapArray[i][j] = new Housing();
+                        mapArray[i][j] = new Housing(i,j);
                         break;
                     case 'I':
-                        mapArray[i][j] = new Industrial();
+                        mapArray[i][j] = new Industrial(i,j);
                         break;
                     case 'C':
-                        mapArray[i][j] = new Commercial();
+                        mapArray[i][j] = new Commercial(i,j);
                         break;
                     case 'P':
-                        mapArray[i][j] = new PowerPlant();
+                        mapArray[i][j] = new PowerPlant(i,j);
                         break;
                     case 'W':
-                        mapArray[i][j] = new WaterPumpingStation();
+                        mapArray[i][j] = new WaterPumpingStation(i,j);
                         break;
                     case 'T':
-                        mapArray[i][j] = new InternetHub();
+                        mapArray[i][j] = new InternetHub(i,j);
                         break;
-                        /*
                     case 'F':
-                        mapArray[i][j] = new PoliceStation();
+                        mapArray[i][j] = new PoliceStation(i,j);
                         break;
                     case 'D':
-                        mapArray[i][j] = new Hospital();
+                        mapArray[i][j] = new Hospital(i,j);
                         break;
                     case 'S':
-                        mapArray[i][j] = new School();
+                        mapArray[i][j] = new School(i,j);
                         break;
                     case 'R':
-                        mapArray[i][j] = new Road();
+                        mapArray[i][j] = new Road(i,j);
                         break;
                     case 'E':
-                        mapArray[i][j] = new EmptyCell();
+                        mapArray[i][j] = new EmptyCell(i,j);
                         break;
 
-                         */
+
                     default:
                         throw new InvalidCharException("Invalid character: " + c);
                 }
