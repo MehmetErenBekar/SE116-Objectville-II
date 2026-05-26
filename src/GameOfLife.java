@@ -1,4 +1,6 @@
 import com.objectville.model.Cell;
+import com.objectville.model.EmptyCell;
+import com.objectville.model.Housing;
 
 public class GameOfLife {
 
@@ -43,8 +45,39 @@ public class GameOfLife {
         }
         return count;
     }
-    // mock for now
+    //alive == not a empty cell
     public static boolean alive (Cell [][] grid ,int row, int col){
+        if(grid[row][col] instanceof EmptyCell){
+            return false;
+        }
         return true;
+    }
+
+    //returns the next grid
+    public Cell[][] nextTick(Cell[][] original_grid) {
+        int rows = original_grid.length;
+        int cols = original_grid[0].length;
+
+        Cell[][] nextGrid = new Cell[rows][cols];
+
+        for (int i = 0; i < original_grid.length; i++) {
+            for (int j = 0; j < original_grid[0].length; j++) {
+                int neighbours = neighbours(original_grid, i, j);
+                boolean current_status = alive(original_grid, i, j);
+                boolean next_status = apply(alive(original_grid,i,j),neighbours);
+
+
+                if(next_status){
+                    if(current_status){
+                        nextGrid[i][j] = original_grid[i][j];
+                    }else{
+                        nextGrid[i][j] = new Housing(i,j);
+                    }
+                }else{
+                    nextGrid[i][j] = new EmptyCell(i,j);
+                }
+            }
+        }
+        return nextGrid;
     }
 }
