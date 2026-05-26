@@ -1,4 +1,6 @@
 
+import com.objectville.model.*;
+
 import java.util.*;
 
 
@@ -25,15 +27,16 @@ import java.util.*;
             return false;
 
         // If cell is already visited
-        if (vis[row][col])
+        if (vis[row][col]){
             return false;
+            }
 
         // Otherwise
         return true;
     }
 
     // Function to perform the BFS traversal
-    static void BFS(int grid[][], boolean vis[][], int startX, int startY, int maxRadius, int initialCapacity) {
+    static void BFS(Cell grid[][], boolean vis[][], int startX, int startY, int maxRadius, int initialCapacity) {
 
         // Stores indices of the matrix cells
 
@@ -59,7 +62,7 @@ import java.util.*;
 
             q.remove();
 
-            if (isBuildingWithDemand(x, y)) {
+            if (isBuildingWithDemand(grid[x][y])) {
                 int demand = getBuildingDemand(x, y);
                 if (remainingCapacity >= demand) {
                     remainingCapacity -= demand;
@@ -74,7 +77,7 @@ import java.util.*;
                 int adjx = x + dRow[i];
                 int adjy = y + dCol[i];
 
-                if (isValid(vis, adjx, adjy) &&  isWalkable(adjx, adjy))
+                if (isValid(vis, adjx, adjy) &&  isWalkable(grid[adjx][adjx]))
                 {
                     int distance = MathUtils.calculateManhattanDistance(startX, startY, adjx, adjy);
 
@@ -87,11 +90,20 @@ import java.util.*;
         }
     }
         // until classes are ready assume this
-        public static boolean isBuildingWithDemand(int x, int y) {
-            return false;
+        public static boolean isBuildingWithDemand(Cell c) {
+        if (c instanceof Industrial){
+            return true;
         }
-        public static boolean isWalkable(int x, int y)
-        {
+        if (c instanceof Commercial){
+            return true;
+        }
+        if (c instanceof Housing){
+            return true;
+        }
+        return false;
+        }
+        //
+        public static boolean isWalkable(Cell c) {
             return true;
         }
         static int getBuildingDemand(int x, int y) {
@@ -103,10 +115,7 @@ import java.util.*;
     {
 
         // Given input matrix
-        int grid[][] = { { 1, 2, 3, 4 },
-                { 5, 6, 7, 8 },
-                { 9, 10, 11, 12 },
-                { 13, 14, 15, 16 } };
+        Cell grid[][] = MapReader.readFile("map.txt");
         int startX = 10;
         int startY = 10;
         int maxRadius = 5;
@@ -115,7 +124,7 @@ import java.util.*;
         // Declare the visited array
         boolean [][]vis = new boolean[ROW][COL];
 
-        BFS(grid, vis, startX, startY, maxRadius, initialCapacity);
+        BFS( grid, vis, startX, startY, maxRadius, initialCapacity);
     }
 }
     class pair{

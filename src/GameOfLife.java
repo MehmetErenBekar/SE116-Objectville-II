@@ -1,3 +1,5 @@
+import com.objectville.model.Cell;
+
 public class GameOfLife {
 
     // Direction vectors
@@ -21,23 +23,28 @@ public class GameOfLife {
         return false;
     }
 
-    public static int neighbours(int x, int y) {
+    public static int neighbours(Cell[][] grid, int x, int y) {
         int count = 0;
+        int maxRows = grid.length;
+        int maxCols = grid[0].length;
 
-        //WRITE AN IF STATEMENT CHECKING THE BOUNDERIES
 
 
         for (int i = 0; i < 8; i++) {
             int adjx = x + dRow[i];
             int adjy = y + dCol[i];
-            if (alive(adjx,adjy)){
-                count++;
+
+            //checking bounderies
+            if (adjx >= 0 && adjx < maxRows && adjy >= 0 && adjy < maxCols) {
+                if (alive(grid, adjx, adjy)){
+                    count++;
+                }
             }
         }
         return count;
     }
     // mock for now
-    public static boolean alive ( int row, int col){
+    public static boolean alive (Cell [][] grid ,int row, int col){
         return true;
     }
 }
