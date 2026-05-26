@@ -1,6 +1,7 @@
 
 import com.objectville.model.*;
 
+import java.nio.channels.Pipe;
 import java.util.*;
 
 
@@ -104,6 +105,9 @@ import java.util.*;
         }
         //
         public static boolean isWalkable(Cell c) {
+            if (c instanceof EmptyCell) {
+                return false;
+            }
             return true;
         }
         static int getBuildingDemand(int x, int y) {
