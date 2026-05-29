@@ -1,10 +1,17 @@
+
+import com.objectville.exception.InvalidCharException;
+import com.objectville.exception.InvalidMapFormatException;
+import com.objectville.model.*;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class MapReader{
+
 
     public static Cell[][] readFile(String fileName) {
 
