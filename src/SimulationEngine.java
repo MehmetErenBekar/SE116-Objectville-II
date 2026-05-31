@@ -96,10 +96,7 @@ public class SimulationEngine {
     }
 
     private void distributeResources(int tick){
-        if(tick < 1){
-            System.out.println("invalid tick");
-            return;
-        }
+
         //in the first tick skip
         if (tick == 1) return;
 
