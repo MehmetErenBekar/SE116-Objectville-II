@@ -9,8 +9,8 @@ public class Main {
      System.out.println("Invalid input.");
      return;}
 
- String fileName = args[0];
- int tick;
+     String fileName = args[0];
+    int tick;
 
 //tick control
 
@@ -25,6 +25,14 @@ public class Main {
         return;}
 
         Cell[][] map = MapReader.readFile(fileName);
+
+        if (map == null) {
+            System.out.println("Could not load map.");
+            return;
+        }
+
+        SimulationEngine engine = new SimulationEngine(map);
+        engine.run(tick);
 
     }
 }

@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c4b1a54-a78b-4d8b-b868-4c1f8d66e362" name="Changes" comment="." />
+    <list default="true" id="4c4b1a54-a78b-4d8b-b868-4c1f8d66e362" name="Changes" comment="main run method">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameOfLife.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MathUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MathUtils.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,12 +55,17 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.GFG.executor": "Run",
+    "Application.Main.executor": "Run",
     "Application.UtilityBFS.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "feature/io-map-reader",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "to.speed.mode.migration.done": "true"
   }
 }]]></component>
@@ -96,7 +108,39 @@
       <option name="project" value="LOCAL" />
       <updated>1779451292050</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary=".">
+      <option name="closed" value="true" />
+      <created>1780063880664</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1780063880664</updated>
+    </task>
+    <task id="LOCAL-00005" summary="assign utilities to zones">
+      <option name="closed" value="true" />
+      <created>1780134628380</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1780134628380</updated>
+    </task>
+    <task id="LOCAL-00006" summary="main run method">
+      <option name="closed" value="true" />
+      <created>1780215543187</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1780215543187</updated>
+    </task>
+    <task id="LOCAL-00007" summary="main run method">
+      <option name="closed" value="true" />
+      <created>1780222187465</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1780222187465</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,6 +185,8 @@
     <MESSAGE value="matematiksel masefe hesapları + canlı/ölü hücre mantığı" />
     <MESSAGE value="finding shortest path bfs" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="assign utilities to zones" />
+    <MESSAGE value="main run method" />
+    <option name="LAST_COMMIT_MESSAGE" value="main run method" />
   </component>
 </project>
