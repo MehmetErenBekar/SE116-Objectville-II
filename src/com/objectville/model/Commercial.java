@@ -100,4 +100,12 @@ public class Commercial extends Zone {
     public char display() {
         return 'C';
     }
+
+
+    @Override
+    public void reset() {
+        super.reset();
+        receivedPopulation = 0;
+        receivedGoods = 0;
+    }
 }

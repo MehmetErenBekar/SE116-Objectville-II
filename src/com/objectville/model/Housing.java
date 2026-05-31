@@ -68,4 +68,10 @@ public class Housing extends Zone{
         return 'H';
     }
 
+    @Override
+    public void reset() {
+        super.reset();
+        receivedLifestyle = 0;
+    }
+
 }

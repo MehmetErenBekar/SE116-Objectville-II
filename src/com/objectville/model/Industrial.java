@@ -82,4 +82,11 @@ public class Industrial extends Zone {
     public char display() {
         return 'I';
     }
+
+
+    @Override
+    public void reset() {
+        super.reset();
+        receivedPopulation = 0;
+    }
 }
