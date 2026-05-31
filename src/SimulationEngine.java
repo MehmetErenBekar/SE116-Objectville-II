@@ -191,10 +191,10 @@ public class SimulationEngine {
                 if (cell instanceof Housing) {
                     Housing h = (Housing) cell;
                     int prod = h.calculateProduction();
-                    if (prod > 0) {
-                        PrintOutput.generatedPrint("Housing", r, c, prod, "population");
-                        totalPopulation += prod;
-                    }
+
+                    PrintOutput.generatedPrint("Housing", r, c, prod, "population");
+                    totalPopulation += prod;
+
                     h.adjustDemand();
 
                     // industtrial will provide goods
