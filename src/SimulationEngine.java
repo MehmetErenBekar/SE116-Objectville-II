@@ -55,15 +55,15 @@ public class SimulationEngine {
                             if (type.equals("SECURITY")) {
                                 zone.receiveSecurity(true);
                                 PrintOutput.receivedServicePrint(
-                                        zone.display() + "", zr, zc, "security");
+                                        zone.getClass().getSimpleName() + "", zr, zc, "security");
                             } else if (type.equals("HEALTH")) {
                                 zone.receiveHealth(true);
                                 PrintOutput.receivedServicePrint(
-                                        zone.display() + "", zr, zc, "health");
+                                        zone.getClass().getSimpleName() + "", zr, zc, "health");
                             } else if (type.equals("EDUCATION")) {
                                 zone.receiveEducation(true);
                                 PrintOutput.receivedServicePrint(
-                                        zone.display() + "", zr, zc, "education");
+                                        zone.getClass().getSimpleName() + "", zr, zc, "education");
                             }
                         }
                     }
@@ -167,10 +167,10 @@ public class SimulationEngine {
 
                 if (newLevel > oldLevel) {
                     PrintOutput.levelupPrint(
-                            zone.display()+"", r, c, oldLevel, newLevel);
+                            zone.getClass().getSimpleName()+"", r, c, oldLevel, newLevel);
                 } else if (newLevel < oldLevel) {
                     PrintOutput.levelDownPrint(
-                            zone.display()+"", r, c, oldLevel, newLevel);
+                            zone.getClass().getSimpleName()+"", r, c, oldLevel, newLevel);
                 }
             }
         }
