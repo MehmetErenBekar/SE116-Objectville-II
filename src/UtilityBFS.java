@@ -51,13 +51,13 @@ public class UtilityBFS {
 
                 if (utilityType.equals("ELECTRICITY")) {
                     zone.setReceivedElectricity(zone.getReceivedElectricity() + given);
-                    PrintOutput.utilityReceivedPrint(zone.display()+"", x, y, given, "electricity");
+                    PrintOutput.utilityReceivedPrint(zone.getClass().getSimpleName(), x, y, given, "electricity");
                 } else if (utilityType.equals("WATER")) {
                     zone.setReceivedWater(zone.getReceivedWater() + given);
-                    PrintOutput.utilityReceivedPrint(zone.display()+"", x, y, given, "water");
+                    PrintOutput.utilityReceivedPrint(zone.getClass().getSimpleName(), x, y, given, "water");
                 } else if (utilityType.equals("INTERNET")) {
                     zone.setReceivedInternet(zone.getReceivedInternet() + given);
-                    PrintOutput.utilityReceivedPrint(zone.display()+"", x, y, given, "internet");
+                    PrintOutput.utilityReceivedPrint(zone.getClass().getSimpleName(), x, y, given, "internet");
                 }
             }
             //checking neighbors
