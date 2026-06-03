@@ -123,12 +123,12 @@ public class SimulationEngine {
             for (Industrial ind : industrials) {
                 ind.setReceivedPopulation(share);
                 PrintOutput.resourceReceivedPrint(
-                        "Industrial", ind.getRow(), ind.getCol(), share, "population");
+                        ind.getClass().getSimpleName(), ind.getRow(), ind.getCol(), share, "population");
             }
             for (Commercial com : commercials) {
                 com.setReceivedPopulation(share);
                 PrintOutput.resourceReceivedPrint(
-                        "Commercial", com.getRow(), com.getCol(), share, "population");
+                        com.getClass().getSimpleName(), com.getRow(), com.getCol(), share, "population");
             }
         }
         //
@@ -137,7 +137,7 @@ public class SimulationEngine {
             for (Commercial com : commercials) {
                 com.setReceivedGoods(share);
                 PrintOutput.resourceReceivedPrint(
-                        "Commercial", com.getRow(), com.getCol(), share, "goods");
+                        com.getClass().getSimpleName(), com.getRow(), com.getCol(), share, "goods");
             }
         }
 
@@ -146,7 +146,7 @@ public class SimulationEngine {
             for (Housing h : houses) {
                 h.setReceivedLifestyle(share);
                 PrintOutput.resourceReceivedPrint(
-                        "Housing", h.getRow(), h.getCol(), share, "lifestyle");
+                        h.getClass().getSimpleName(), h.getRow(), h.getCol(), share, "lifestyle");
             }
         }
     }
@@ -192,7 +192,7 @@ public class SimulationEngine {
                     Housing h = (Housing) cell;
                     int prod = h.calculateProduction();
 
-                    PrintOutput.generatedPrint("Housing", r, c, prod, "population");
+                    PrintOutput.generatedPrint(h.getClass().getSimpleName(), r, c, prod, "population");
                     totalPopulation += prod;
 
                     h.adjustDemand();
@@ -203,7 +203,7 @@ public class SimulationEngine {
                     Industrial ind = (Industrial) cell;
                     int prod = ind.calculateProduction();
                     if (prod > 0) {
-                        PrintOutput.generatedPrint("Industrial", r, c, prod, "goods");
+                        PrintOutput.generatedPrint(ind.getClass().getSimpleName(), r, c, prod, "goods");
                         totalGoods += prod;
                     }
                     ind.adjustDemand();
@@ -214,7 +214,7 @@ public class SimulationEngine {
                     Commercial com = (Commercial) cell;
                     int prod = com.calculateProduction();
                     if (prod > 0) {
-                        PrintOutput.generatedPrint("Commercial", r, c, prod, "lifestyle");
+                        PrintOutput.generatedPrint(com.getClass().getSimpleName(), r, c, prod, "lifestyle");
                         totalLifestyle += prod;
                     }
                     com.adjustDemand();
